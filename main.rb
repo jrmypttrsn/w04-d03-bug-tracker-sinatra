@@ -11,7 +11,7 @@ get '/' do
   binding.pry
 end
 
-#### INSECTS
+##### INSECTS #####
 
 # Index
 get '/insects' do
@@ -42,4 +42,44 @@ get '/insects/:id' do
   @insect = Insect.find_by_id(params['id']) # nil or Insect object
   erb :insects_show
 end
+
+###### LOCATIONS ######
+
+# Index
+get '/locations' do
+  @locations = Location.all
+  erb :locations_index
+end
+
+# New
+get '/locations/new' do
+  @locations = Location.new
+  erb :locations_new
+end
+
+# Create
+post '/locations' do
+  # create location object
+  @location = Location.new(params)
+
+  if @location.save
+    redirect to('/locations')
+  else
+    erb :locations_new
+  end
+end
+
+# Show
+get '/locations/:id' do
+  @location = Location.find_by_id(params['id'])
+  erb :locations_show
+end
+
+
+
+
+
+
+
+
 

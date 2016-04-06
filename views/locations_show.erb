@@ -1,0 +1,9 @@
+<% if @location %>
+  <h1><%= @location.name %></h1>
+
+  <p><em>Description:</em> <%= @location.description %></p>
+<% else %>
+  <p>No location of that ID exists</p>
+<% end %>
+
+<p><a href="/locations">Back to All Locations</a></p>
