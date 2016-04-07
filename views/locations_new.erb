@@ -1,7 +1,12 @@
+<% if @location.errors.any? %>
+  <% @location.errors.full_messages.each do |m| %>
+    <p>Error: <%= m %></p>
+  <% end %>
+<% end %>
+
 <h1>New Location</h1>
 
 <form action="/locations" method="post">
   Name:<input type="text" name="name"></br>
-  Description:<input type="text", name="description"></br>
   <input type="submit" value="New Location!">
 </form>

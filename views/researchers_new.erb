@@ -1,0 +1,13 @@
+<% if @researcher.errors.any? %>
+  <% @researcher.errors.full_messages.each do |m| %>
+    <p>Error: <%= m %></p>
+  <% end %>
+<% end %>
+
+<h1>New Researcher</h1>
+
+<form action="/researchers" method="post">
+  Name:<input type="text" name="name"></br>
+  Age:<input type="text", name="age"></br>
+  <input type="submit" value="New Researcher!">
+</form>

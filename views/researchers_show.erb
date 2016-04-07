@@ -1,0 +1,9 @@
+<% if @researcher %>
+  <h1><%= @researcher.name %></h1>
+
+  <p><em>Age:</em> <%= @researcher.age %></p>
+<% else %>
+  <p>No researcher of that ID exists</p>
+<% end %>
+
+<p><a href="/researchers">Back to All Researchers</a></p>
